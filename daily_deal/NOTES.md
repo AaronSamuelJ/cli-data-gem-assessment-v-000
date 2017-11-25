@@ -23,3 +23,10 @@ Show a list of products
 Which product do you want to learn more about?
 
 1
+
+What is a deal?
+
+A deal has a name
+A deal has a price
+A deal has a URL
+A deal has an availability

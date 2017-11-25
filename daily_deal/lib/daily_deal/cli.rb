@@ -1,15 +1,35 @@
 class DailyDeal::CLI
 
   def call
-    puts "Today's Daily Deals:"
     list_deals
+    menu
+    goodbye
   end
 
   def list_deals
     # here doc - http://blog.jayfields.com/2006/12/ruby-multiline-strings-here-doc-or.html
-    puts <<-DOC.gsub /^\s*/, ''
-      1. PCH Digital Pulse Massager - $27 - Still Available!
-      2. Lenovo ThinkPad 11E 11.6 - $199.99 - Still Available!
-    DOC
+    puts "Todays Daily Deals:"
+    @deals = DailyDeal::Deal.today
+  end
+
+  def menu
+    input = nil
+    while input != "exit"
+      puts "Enter the number of the deal you'd like more info on or type list to see the deals again or type exit"
+      input = gets.strip.downcase
+      case input
+      when "1"
+        puts "More info on deal 1..."
+      when "2"
+        puts "More info on deal 2..."
+      when "list"
+        list_deals
+      else
+        puts "Not sure what you want, type list or exit."
+      end
+    end
+  end
+  def goodbye
+    puts "See you tomorrow for more deals!!!"
   end
 end
