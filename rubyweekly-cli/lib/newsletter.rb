@@ -1,6 +1,8 @@
+class InvalidType < StandardError; end
+
 class Newsletter
   attr_accessor :issue_number, :issue_date
-  attr_reader :articles
+  # attr_reader :articles
 
   def initialize
     @articles = []
@@ -11,7 +13,11 @@ class Newsletter
   end
 
   def add_article(article)
-    raise "invalid article" if !article.is_a?(Article)
+    if !article.is_a?(Article)
+      raise InvalidType, "must be an Article"
+    else
+      @articles << article
+    end
   end
 
   def first_article_url
