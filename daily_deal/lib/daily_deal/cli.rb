@@ -20,7 +20,10 @@ class DailyDeal::CLI
     while input != "exit"
       puts "Enter the number of the deal you'd like more info on or type list to see the deals again or type exit:"
       input = gets.strip.downcase
+<<<<<<< HEAD
 
+=======
+>>>>>>> ccd5e357d8e75cbd3e8f762c295b8cd56e62cf74
       if input.to_i > 0
         the_deal = @deals[input.to_i-1]
         puts "#{the_deal.name} - #{the_deal.price} - #{the_deal.availability}"
