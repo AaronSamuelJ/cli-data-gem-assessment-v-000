@@ -20,9 +20,9 @@ class Newsletter
     end
   end
 
-  def first_article_url
-    # articles is an array
-    # the first element in that array must respond to a URL method
-    self.articles.first.url
-  end
+  # def first_article_url
+  #   # articles is an array
+  #   # the first element in that array must respond to a URL method
+  #   self.articles.first.url
+  # end
 end
