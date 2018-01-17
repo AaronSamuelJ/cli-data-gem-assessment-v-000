@@ -9,31 +9,28 @@ class DailyDeal::Deal
     deals = []
 
     deals << self.scrape_woot
-<<<<<<< HEAD
     deals << self.scrape_meh
     # Go to woot, find the product
     # extract the properties
     # instantiate a deal
-=======
     # Go to woot, find the product
     # extract the properties
     # instantiate a deal
 
     # Go to meh...
->>>>>>> ccd5e357d8e75cbd3e8f762c295b8cd56e62cf74
 
     # Go to meh...
 
     # deal_1 = self.new
     # deal_1.name = "PCH Digital Pulse Massager"
     # deal_1.price = "$27"
-    # deal_1.availablility = true
+    # deal_1.availability = true
     # deal_1.url = "https://meh.com/"
     #
     # deal_2 = self.new
     # deal_2.name = "Lenovo ThinkPad 11E 11.6"
     # deal_2.price = "$199.99"
-    # deal_2.availablility = true
+    # deal_2.availability = true
     # deal_2.url = "http://www.woot.com/offers/lenovo-thinkpad-11-6-quad-core"
     # [deal_1, deal_2]
     deals
@@ -50,7 +47,6 @@ class DailyDeal::Deal
     deal
   end
 
-<<<<<<< HEAD
   def self.scrape_meh
     doc = Nokogiri::HTML(open("https://meh.com/"))
     # DailyDeal::Deal.scrape_meh
@@ -60,19 +56,14 @@ class DailyDeal::Deal
     deal.price = doc.search("button.buy-button").text.gsub("Buy it","").strip
     deal.availability = true
     deal.url = "https://meh.com"
-    deal
-=======
     deal_2 = self.new
     deal_2.name = "Lenovo ThinkPad 11E 11.6"
     deal_2.price = "$199.99"
-    deal_2.availablility = true
+    deal_2.availability = true
     deal_2.url = "http://www.woot.com/offers/lenovo-thinkpad-11-6-quad-core"
-    [deal_1, deal_2]
-    deals
+    deal
   end
-  def self.scrape_woot
-    doc = Nokogiri::HTML(open("https://woot.com"))
-    binding.pry
->>>>>>> ccd5e357d8e75cbd3e8f762c295b8cd56e62cf74
-  end
+  # def self.scrape_woot
+  #   doc = Nokogiri::HTML(open("https://woot.com"))
+  # end
 end

@@ -10,8 +10,8 @@ class DailyDeal::CLI
     # here doc - http://blog.jayfields.com/2006/12/ruby-multiline-strings-here-doc-or.html
     puts "Todays Daily Deals:"
     @deals = DailyDeal::Deal.today
-    @deals.each.with_index(1) do |deal, i|
-      puts "#{i}. #{deal.name} - #{deal.price} - #{deal.availability}"
+    @deals.each_with_index do |deal, i|
+      puts "#{i+1}. #{deal.name} - #{deal.price} - #{deal.availability}"
     end
   end
 
@@ -20,10 +20,6 @@ class DailyDeal::CLI
     while input != "exit"
       puts "Enter the number of the deal you'd like more info on or type list to see the deals again or type exit:"
       input = gets.strip.downcase
-<<<<<<< HEAD
-
-=======
->>>>>>> ccd5e357d8e75cbd3e8f762c295b8cd56e62cf74
       if input.to_i > 0
         the_deal = @deals[input.to_i-1]
         puts "#{the_deal.name} - #{the_deal.price} - #{the_deal.availability}"
